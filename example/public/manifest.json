@@ -1,6 +1,6 @@
 {
-  "short_name": "simple-react",
-  "name": "simple-react",
+  "short_name": "simple-react-components",
+  "name": "simple-react-components",
   "icons": [
     {
       "src": "favicon.ico",

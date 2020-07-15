@@ -1,10 +1,10 @@
 {
-  "name": "simple-react",
+  "name": "simple-react-components",
   "version": "1.0.0",
-  "description": "Made with create-react-library",
+  "description": "Simple reusable configurable react components",
   "author": "MikeDrewitt",
   "license": "MIT",
-  "repository": "MikeDrewitt/simple-react",
+  "repository": "MikeDrewitt/simple-react-components",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
@@ -59,5 +59,9 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "@types/shortid": "0.0.29",
+    "shortid": "^2.2.15"
+  }
 }

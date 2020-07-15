@@ -1,13 +1,11 @@
-# simple-react
+# Simple React Components
 
-> Made with create-react-library
-
-[![NPM](https://img.shields.io/npm/v/simple-react.svg)](https://www.npmjs.com/package/simple-react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+A library of simple general purpose react components. The purpose of this project is to allow development to be easier without having to recreate the same general purpose component every project that I work on.
 
 ## Install
 
 ```bash
-npm install --save simple-react
+npm install --save simple-react-components
 ```
 
 ## Usage
@@ -15,8 +13,8 @@ npm install --save simple-react
 ```tsx
 import React, { Component } from 'react'
 
-import MyComponent from 'simple-react'
-import 'simple-react/dist/index.css'
+import MyComponent from 'simple-react-components'
+import 'simple-react-components/dist/index.css'
 
 class Example extends Component {
   render() {

@@ -1,0 +1,10 @@
+.area input {
+  height: 50px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+/* Selects sublabel */
+.area label:nth-of-type(2) {
+  font-weight: bold;
+}
