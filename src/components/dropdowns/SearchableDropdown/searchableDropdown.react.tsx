@@ -1,7 +1,7 @@
 import React from 'react'
 
-const AsyncDropown = () => {
+const SearchableDropown = () => {
   return <div>TODO - AsyncDropdown</div>
 }
 
-export default AsyncDropown
+export default SearchableDropown

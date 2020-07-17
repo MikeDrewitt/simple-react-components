@@ -1,17 +1,25 @@
 import React from 'react'
 
-import { Button } from 'simple-react-components'
+import { Dropdown } from 'simple-react-components'
 
 import './main.css'
 
 const Main = () => {
-  const handleClick = () => console.log('Clicked')
+  const handleChange = (value: any) => console.log(value)
+  const options = [
+    { value: 1, label: 'one' },
+    { value: 2, label: 'two' },
+    { value: 3, label: 'three' }
+  ]
 
   return (
     <div style={{ padding: 20 }}>
-      <Button className='button' onClick={handleClick}>
-        Click Me
-      </Button>
+      <Dropdown
+        label='Number Picker'
+        placeholder='Select an option'
+        options={options}
+        onChange={handleChange}
+      />
     </div>
   )
 }

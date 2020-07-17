@@ -3,8 +3,8 @@ import { render, screen, fireEvent } from '@testing-library/react'
 
 import '@testing-library/jest-dom/extend-expect'
 
-import AsyncDropdown from './asyncDropdown.react'
+import SearchableDropdown from './searchableDropdown.react'
 
-describe('AsyncDropdown', () => {
+describe('SearchableDropdown', () => {
   it.todo('Stubbed test')
 })

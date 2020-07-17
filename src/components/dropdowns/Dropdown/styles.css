@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container label {
+  width: 100%;
+}
+
+.container select {
+  width: 100%;
+  cursor: pointer;
+}

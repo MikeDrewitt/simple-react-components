@@ -1,8 +1,8 @@
-import * as React from 'react'
+import React from 'react'
 
 import shortid from 'shortid'
 
-import styles from './styles.css'
+import './styles.css'
 
 interface Props {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
@@ -32,7 +32,7 @@ class TextField extends React.Component<Props> {
     } = this.props
 
     return (
-      <div className={`${styles.container} ${className}`}>
+      <div className={className}>
         {label && <label htmlFor={id}>{label}</label>}
         <input
           id={id}
