@@ -1,3 +1,12 @@
+/**
+ * Used to create stubbed components within the library
+ *
+ * The script can be called via the package.json or directly from the root of the project
+ *
+ * @argument componentName - name your component with a camel case naming convention
+ *                         - by default we'll build it to /components
+ *                         - You can include sub directories as well (ex: inputs/newButton)
+ */
 const fs = require('fs')
 
 // Extensions

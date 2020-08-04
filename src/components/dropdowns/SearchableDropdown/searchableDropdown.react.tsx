@@ -67,6 +67,8 @@ class SearchableDropown extends React.Component<Props, State> {
     const { isOpen, featuredIndex, filteredOptions } = this.state
     const maxIndex = filteredOptions.length - 1
 
+    let newIndex = featuredIndex
+
     if (!isOpen) return
     if (keyCode === Keys.Esc) return this.handleClose()
 
@@ -77,18 +79,27 @@ class SearchableDropown extends React.Component<Props, State> {
         featuredIndex === maxIndex ? featuredIndex : featuredIndex + 1
 
       if (keyCode === Keys.Enter) this.handleSelectOption(option)
-      else if (keyCode === Keys.Up) this.setState({ featuredIndex: indexUp })
-      else if (keyCode === Keys.Down)
-        this.setState({ featuredIndex: indexDown })
-
-      return
+      else if (keyCode === Keys.Up) newIndex = indexUp
+      else if (keyCode === Keys.Down) newIndex = indexDown
+    } else {
+      if (keyCode === Keys.Down) newIndex = 0
+      else if (keyCode === Keys.Up) newIndex = maxIndex
     }
 
-    if (keyCode === Keys.Down) this.setState({ featuredIndex: 0 })
-    else if (keyCode === Keys.Up) this.setState({ featuredIndex: maxIndex })
+    this.setState({ featuredIndex: newIndex })
+
+    const scrollRef = this['_refs-' + newIndex]
+
+    if (!scrollRef) return
+
+    scrollRef.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      inline: 'center'
+    })
   }
 
-  handleOpen = () => this.setState({ isOpen: true })
+  handleOpen = () => this.setState({ isOpen: true, featuredIndex: null })
 
   handleClose = () => {
     const { options } = this.props
@@ -98,7 +109,12 @@ class SearchableDropown extends React.Component<Props, State> {
       featuredIndex: null,
       isOpen: false
     })
+
     this.inputRef.current?.blur()
+  }
+
+  handleAssignRef = (ref: HTMLDivElement, index: number) => {
+    this['_refs-' + index] = ref
   }
 
   handleTextUpdate = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -140,6 +156,7 @@ class SearchableDropown extends React.Component<Props, State> {
           index === featuredIndex ? styles.highlighted : ''
         } option}`}
         key={index}
+        ref={(ref: HTMLDivElement) => this.handleAssignRef(ref, index)}
         onClick={() => this.handleSelectOption(option)}
       >
         {option.component ? option.component : label(option.label)}
