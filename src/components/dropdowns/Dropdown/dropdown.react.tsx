@@ -2,12 +2,9 @@ import React, { ChangeEvent } from 'react'
 
 import shortid from 'shortid'
 
-import styles from './styles.css'
+import { DropdownObject } from '../dropdown.types'
 
-type DropdownObject = {
-  value: any
-  label: string
-}
+import styles from './styles.css'
 
 type Props = {
   options: Array<DropdownObject>
